@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
+
+import './Generate.css';
 
 export const Generate = () => {
   const [imageUrl, setImageUrl] = useState<string>('');
@@ -7,7 +9,7 @@ export const Generate = () => {
   const [imageSize, setImageSize] = useState<string>('small');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     generatedImage(promptValue, imageSize);
   };
@@ -28,15 +30,11 @@ export const Generate = () => {
           size,
         }),
       });
-
       if (!response.ok) {
         setIsLoading(false);
         throw new Error('That image could not be generated');
       }
-
       const generatedImage = await response.json();
-
-      console.log(generatedImage.data);
       setImageUrl(generatedImage.data);
       setIsLoading(false);
     } catch (error: any) {
@@ -48,42 +46,46 @@ export const Generate = () => {
     <main>
       <section>
         <form onSubmit={handleSubmit}>
-          <h3>What exactly you want to see?</h3>
-          <div>
-            <input
-              value={promptValue}
-              onChange={(e) => setPromptValue(e.target.value)}
-              type='text'
-              id='prompt'
-              required
-              autoComplete='off'
-              placeholder='Enter your prompts'
-            />
+          <h1>Generate</h1>
+          <div className='Inputs'>
+            <div className='Input-Group'>
+              <label>Enter your Prompt</label>
+              <input
+                value={promptValue}
+                onChange={(e) => setPromptValue(e.target.value)}
+                type='text'
+                id='prompt'
+                required
+                autoComplete='off'
+                placeholder='Boy on the moon...'
+              />
+            </div>
+            <div className='Input-Group'>
+              <label>Select Size</label>
+              <select
+                value={imageSize}
+                onChange={(e) => setImageSize(e.target.value)}
+                name='size'
+                id='size'
+              >
+                <option value='small'>Small</option>
+                <option value='medium'>Medium</option>
+                <option value='large'>Large</option>
+              </select>
+            </div>
           </div>
-          <div>
-            <label>Select Size</label>
-            <select
-              value={imageSize}
-              onChange={(e) => setImageSize(e.target.value)}
-              name='size'
-              id='size'
-            >
-              <option value='small'>Small</option>
-              <option value='medium'>Medium</option>
-              <option value='large'>Large</option>
-            </select>
-          </div>
+          <br />
           <button disabled={promptValue === ''} type='submit'>
             Generate
           </button>
         </form>
       </section>
       {isLoading ? (
-        <p>Loading...</p>
+        <p>Pixel by pixel...</p>
       ) : (
-        <section>
+        <section className='Image'>
           <div>
-            <h2 id='msg'>{error}</h2>
+            <p>{error}</p>
             {imageUrl.length > 1 && (
               <img src={imageUrl} alt='OpenAI Image' id='image' />
             )}
