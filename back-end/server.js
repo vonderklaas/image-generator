@@ -17,7 +17,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', require('./routes/root'));
-app.use('/generate', require('./routes/generate'));
+app.use('/openai', require('./routes/generate'));
 
 app.all('*', (req, res) => {
   res.status(404);
