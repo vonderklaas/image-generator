@@ -1,24 +1,18 @@
 ### AI Image Generator
 
-This is full-stack application made with Node, React and TypeScript. Use prompts to generate an image from few words and ideas. With help of DALLE-2 and OpenAI, generating is simpler than ever!
-
+This is full-stack application made with *Node*, *React* and TypeScript. Use prompts to generate an image from few words and ideas. With help of DALLE-2 and OpenAI generating is easier than ever
 
 
 ### How to run?
 
-1 - CLONE PROJECT
 
-```
-git clone <PROJECT URL>
-```
-
-2 - INSTALL PACKAGES
+Install packages
 
 ```
 npm i
 ```
 
-3 - ENTER VARIABLES
+Populate .env variables
 
 ```
 PORT=
@@ -26,13 +20,13 @@ OPENAI_API_KEY=
 NODE_ENV=
 ```
 
-4 - RUN SERVER (server folder)
+Run client
 
 ```
 npm run dev
 ```
 
-5 - RUN CLIENT (client folder)
+Run server
 
 ```
 npm run dev
