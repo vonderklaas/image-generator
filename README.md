@@ -1,6 +1,6 @@
 ### AI Image Generator
 
-This is full-stack application made with *Node*, *React* and TypeScript. Use prompts to generate an image from few words and ideas. With help of DALLE-2 and OpenAI generating is easier than ever
+This is full-stack application made with *Node* and *React*. Use prompts to generate an image from few words and ideas. With help of DALLE2 and OpenAI generating is easier than ever.
 
 
 ### How to run?
