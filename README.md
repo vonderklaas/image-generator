@@ -1,9 +1,6 @@
-### AI Image Generator
+dalle2-generator
 
-This is full-stack application made with *Node* and *React*. Use prompts to generate an image from few words and ideas. With help of DALLE2 and OpenAI generating is easier than ever.
-
-
-### Quick Start
+## Quick Start
 
 
 Install packages
