@@ -1,30 +1,27 @@
-dalle2-generator
-
-## Quick Start
-
+### Quick Start
 
 Install packages
 
 ```
-npm i
+yarn
 ```
 
 Populate .env variables
 
 ```
 PORT=
-OPENAI_API_KEY=
 NODE_ENV=
+OPENAI_API_KEY=
 ```
 
 Run client
 
 ```
-npm run dev
+yarn dev
 ```
 
 Run server
 
 ```
-npm run dev
+yarn dev
 ```
