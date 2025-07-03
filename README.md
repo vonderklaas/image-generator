@@ -1,7 +1,7 @@
-<p align="center">
-  <img src="https://github.com/vonderklaas/perceptron-as-linear-classifier/blob/main/neuron.jpg" alt="Neuron" width="400"/>
+### Formulas
+<p align="left">
+  <img src="https://github.com/user-attachments/assets/3f4281e5-9e91-4996-83df-d82126abde89" alt="Formulas" width="400" />
 </p>
-<br/>
 
 ### Perceptron as a Linear Classifier
 
